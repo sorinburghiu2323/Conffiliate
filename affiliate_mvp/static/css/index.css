@@ -1,0 +1,177 @@
+/*Index banner*/
+
+.index-welcome {
+    height: 92vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.top-banner {
+    display: flex;
+    justify-content: flex-end;
+}
+.top-banner p {
+    margin-top: 2rem;
+    margin-right: 2rem;
+    text-align: right;
+    width: 30rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    line-height: 2.5rem;
+}
+.bottom-banner {
+    display: flex;
+    align-items: flex-end;
+    height: 40vh;
+}
+.bottom-banner p {
+    margin-left: 2rem;
+    text-align: center;
+    width: 20rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px black;
+}
+
+/*Register*/
+
+.index-register {
+    height: 50vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.register-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    width: 80%;
+}
+.register-subtitle {
+    font-size: 1.8rem;
+    width: 90%;
+}
+.update {
+    font-size: 1rem;
+    color: red;
+}
+input[type="email"] {
+    margin-top: 15px;
+}
+button {
+    margin-top: 10px;
+}
+
+/*What is*/
+
+.what-is {
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.what-is-title {
+    font-size: 4rem;
+    font-weight: bold;
+    font-style: italic;
+    color: #316870;
+    margin-bottom: 20px;
+}
+.what-is-subtitle {
+    text-align: center;
+    width: 65%;
+    font-size: 1.8rem;
+    color: #316870;
+}
+
+/*Quick peek*/
+
+.quick-peek {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.quick-peek-title {
+    text-align: center;
+    color: #316870;
+    font-size: 2rem;
+    width: 80%;
+    margin-bottom: 20px;
+}
+.quick-peek-img {
+    width: 75%;
+    border: 5px solid #316870;
+    border-radius: 5px;
+}
+
+@media (min-width: 1001px) {
+    .quick-peek-img-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    /*Index banner*/
+
+    .top-banner {
+        justify-content: center;
+    }
+    .top-banner p {
+        margin-top: 8rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        text-align: center;
+        width: 25rem;
+        font-size: 2.3rem;
+    }
+    .bottom-banner {
+        display: none;
+    }
+
+    /*Register*/
+
+    .register-title {
+        font-size: 1.5rem;
+    }
+    .register-subtitle {
+        font-size: 1.2rem;
+    }
+
+    /*What is*/
+
+    .what-is-title {
+        font-size: 2.4rem;
+    }
+    .what-is-subtitle {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    /*Quick peek*/
+
+    .quick-peek-title {
+        width: 90%;
+        font-size: 1.8rem;
+    }
+    .quick-peek-img {
+        display: none;
+    }
+    .quick-peek-img-mobile {
+        width: 200px;
+        border: 5px solid #316870;
+        border-radius: 5px;
+    }
+}

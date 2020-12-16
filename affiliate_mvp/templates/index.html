@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <div class="main-container">
+
+        <div class="index-welcome" style="background-image: url('{% static 'img/index-background.png'%}');">
+            <div class="top-banner">
+                <p> With Affiliate, we aim to create the best partnership between the world's content
+                    creators and businesses in need of advertisement. </p>
+            </div>
+            <div class="bottom-banner">
+                <p> Here to make connections </p>
+            </div>
+        </div>
+
+        <form class="index-register" id="pre_register" method="POST">
+            {% csrf_token %}
+            <div class="register-title">
+                Pre-register today for a free subscription trial on launch
+            </div>
+            <div class="register-subtitle">
+                We only need your email address. We will contact you on launch day along with a
+                thank you gift from us for pre-registering.
+            </div>
+            <div class="update"> </div>
+            <input type="email" id="pre_email" placeholder="Email address..">
+            <button type="submit"> Submit </button>
+        </form>
+
+        <div class="what-is" style="background-image: url('{% static 'img/index-what-is.png'%}');">
+            <div class="what-is-title">
+                What is Affiliate?
+            </div>
+            <div class="what-is-subtitle">
+                We are UK's one of the first affiliate marketing platform that allows businesses and influencers
+                find the right match to partner up, with considerably much more ease and in a fraction of the time!
+                Affiliate is a free of charge service, but to speed your search up there will be a collection of
+                premium options available to purchase.
+            </div>
+        </div>
+
+        <div class="quick-peek">
+            <div class="quick-peek-title">
+                Here's a quick show of our current designs..
+            </div>
+            <img class="quick-peek-img" src="{% static 'img/example.bmp' %}">
+            <img class="quick-peek-img-mobile" src="{% static 'img/example_mobile.bmp' %}">
+        </div>
+    </div>
+
+    <script>
+
+    // Post request the email address
+    $(document).on('submit', '#pre_register' ,function(e){
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url:'{% url 'affiliate_mvp:index' %}',
+            data:{
+                email:$('#pre_email').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                action: 'post'
+            },
+            success:function(response){
+                $(".update").html(response.update)
+            },
+            error : function(xhr,errmsg,err) {
+                console.log(xhr.status + ": " + xhr.responseText);
+            }
+        });
+    });
+
+    </script>
+
+{% endblock %}
