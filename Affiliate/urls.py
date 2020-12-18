@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# This is urls.
 urlpatterns = [
     path('', include('affiliate_mvp.urls')),
     path('admin/', admin.site.urls),
