@@ -60,7 +60,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone = models.CharField(max_length=255)
     user_type = models.CharField(choices=UserType.choices, max_length=UserType.max_length())
     description = models.TextField(null=True, blank=True)
-    picture = models.FileField(null=True, blank=True)
+    picture = models.FileField(upload_to='images/', null=True, blank=True)
     avg_pay = models.IntegerField(null=True, blank=True)  # Looking for pay / Willing to pay.
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)

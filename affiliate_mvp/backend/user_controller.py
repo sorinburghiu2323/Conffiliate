@@ -63,7 +63,7 @@ def create_user(name, email, phone, user_type, password,
     :param user_type: string - user type: "influencer" or "business"
     :param password: string - password
     :param description: (optional) string - description
-    :param picture: (optional) [NOT READY]
+    :param picture: (optional) file - user profile picture or business logo
     :param avg_pay: (optional) string/int - pay in £
     :param keywords: (optional) string - keywords separated by " " or ", "
     :param known_as: (optional influencer) string - user's alias

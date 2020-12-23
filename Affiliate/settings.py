@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -124,3 +125,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'affiliate_mvp/static')]
 
 # Override the default user model.
 AUTH_USER_MODEL = "affiliate_mvp.User"
+
+# Media files
+# (http://www.learningaboutelectronics.com/Articles/How-to-create-an-image-uploader-with-Python-in-Django.php)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = "/media/"
