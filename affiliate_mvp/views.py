@@ -1,5 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
+
+from affiliate_mvp.backend.user_controller import TemporaryUserPlatform, create_user
 from affiliate_mvp.models import PreRegisterUser
 
 
@@ -18,4 +20,22 @@ def index(request):
         new_pre.save()
         return JsonResponse({"update": "SUCCESS: Thank you for pre-registering."})
 
+    return render(request, 'index.html')
+
+
+def test(request):
+    platform = TemporaryUserPlatform(
+        name="Facebook",
+        link="hello https"
+    )
+    create_user(
+        name="sorin",
+        email="sorin@sorin.com",
+        phone="0832",
+        user_type="influencer",
+        password="hello",
+        description="wtf desc",
+        keywords="one two",
+        platforms=[platform],
+    )
     return render(request, 'index.html')

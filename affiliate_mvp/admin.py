@@ -1,4 +1,7 @@
 from django.contrib import admin
-from affiliate_mvp.models import PreRegisterUser
+from affiliate_mvp.models import *
 
-admin.site.register(PreRegisterUser)
+models = [PreRegisterUser, User, Platform, UserPlatform, Keyword, UserKeyword]
+
+for model in models:
+    admin.site.register(model)
