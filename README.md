@@ -18,7 +18,7 @@ $ .venv\bin\activate              # Linux
 
 Then install python dependencies:
 ```
-pip install -r requirements-nondeploy.txt
+pip install -r requirements.txt
 ```
 
 Do your migrations (create your development database):
