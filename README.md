@@ -1,36 +1,58 @@
-# Affiliate
+# Conffiliate
 
-## To use
-Pre-requisites:
-1. Python at least 3.8.3
-2. Django at least 3.1
+## About
 
-## How to use
-To create a new database (migrate) - There shouldn't be need for this as there
-is already a database:
+Conffiliate is an affiliate marketing platform where we aim to connect influencers and businesses together to 
+collaborate and grow together.
+
+## Setup
+
+First set up you python virtual environment and activate it.
+
+```bash
+$ python -m venv .venv
+
+$ .venv\Scripts\activate.bat      # Windows
+$ .venv\bin\activate              # Linux
+```
+
+Then install python dependencies:
+```
+pip install -r requirements-nondeploy.txt
+```
+
+Do your migrations (create your development database):
 ```
 python manage.py migrate
 ```
 
-A superuser is created in the current database 'db.sqlite3', but if this is to be
-deleted, another superuser should be created with:
-```
-python manage.py createsuperuser
-```
-Go into the file path of the first Affiliate folder with all the content.
-To run the server:
+Run the django server using:
 ```
 python manage.py runserver
 ```
 
-## Experiencing migration errors
-If you are getting any kind of migration/table missing error, you might need to
-drop the current database and create a new one.
+### Next install the VueJS frontend dependencies:
 
-Do not do this without checking with someone in production.
+```shell script
+cd frontend
+npm install
+```
+Note: When you pull changes that others have made, you may want to do `npm install` again to ensure any additional dependencies have been added.
 
-To drop your database, simply delete 'db.sqlite3' file.
-Then run:
+Now to build the frontend, there are two ways:
+
+Watches for any changes in the filetree and recompiles when detects a change
 ```
-python manage.py migrate
+npm run watch
 ```
+
+Compiles and minifies for production
+```
+npm run build
+```
+
+## Having a migration error?
+
+This may be due to a database update. Simply drop you current database and create a new one as follows:
+1. Delete `db.sqlite3` file
+2. Run `python manage.py migrate`
