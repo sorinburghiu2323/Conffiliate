@@ -5,6 +5,14 @@
 Conffiliate is an affiliate marketing platform where we aim to connect influencers and businesses together to 
 collaborate and grow together.
 
+## Workspaces
+
+**NOTE:** Send Sorin your trello account name and google email to add you to it.
+
+Trello board for tasks: https://trello.com/b/UhVmO3EG/conffiliate
+
+Google drive designs: https://drive.google.com/drive/folders/1Kaee6qhANiJglTBP6wZj-CAXjmYCMhHb?usp=sharing
+
 ## Setup
 
 First set up you python virtual environment and activate it.
@@ -33,11 +41,11 @@ python manage.py runserver
 
 ### Next install the VueJS frontend dependencies:
 
-```shell script
+```
 cd frontend
 npm install
 ```
-Note: When you pull changes that others have made, you may want to do `npm install` again to ensure any additional dependencies have been added.
+**NOTE:** When you pull changes that others have made, you may want to do `npm install` again to ensure any additional dependencies have been added.
 
 Now to build the frontend, there are two ways:
 
