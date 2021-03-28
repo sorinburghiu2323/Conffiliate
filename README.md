@@ -11,7 +11,7 @@ collaborate and grow together.
 
 Trello board for tasks: https://trello.com/b/UhVmO3EG/conffiliate
 
-Google drive designs: https://drive.google.com/drive/folders/1Kaee6qhANiJglTBP6wZj-CAXjmYCMhHb?usp=sharing
+Google drive: https://drive.google.com/drive/u/0/folders/1lA9QxlAJ3Zp1EZhXGPswerR02fl9SWU5
 
 ## Setup
 
