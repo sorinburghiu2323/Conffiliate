@@ -13,6 +13,8 @@ Trello board for tasks: https://trello.com/b/UhVmO3EG/conffiliate
 
 Google drive: https://drive.google.com/drive/u/0/folders/1lA9QxlAJ3Zp1EZhXGPswerR02fl9SWU5
 
+Discord server: https://discord.gg/Z5tsExZhH5
+
 ## Setup
 
 First set up you python virtual environment and activate it.
