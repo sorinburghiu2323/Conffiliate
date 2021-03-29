@@ -1,8 +1,8 @@
 <template>
-  I am a...
+  <h2>I am a...</h2>
   <div class="select">
-    <button name="Business" type="submit" @click.prevent="route('business')">Business</button>
-    <button name="Influencer" type="submit" @click.prevent="">Influencer</button>
+    <div class="business" @click.prevent="route('business')"><h2>Business</h2></div>
+    <div class="influencer" @click.prevent=""><h2>Influencer</h2></div>
   </div>
 </template>
 
@@ -24,5 +24,25 @@ export default {
 </script>
 
 <style scoped>
-
+.select {
+  margin: auto;
+  position: relative;
+  display: flex;
+}
+.business {
+  margin-left:auto;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: 1px solid black;
+}
+.influencer {
+  margin-right: auto;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: 1px solid black;
+}
 </style>
