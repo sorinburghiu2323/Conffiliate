@@ -22,7 +22,7 @@
     </h2>
     <input type="text" v-model="businessName" placeholder="Business name"/><br>
     <input type="url" v-model="businessLink" placeholder="Website link"/><br>
-    <input type="number" v-model="avgPay" placeholder="Avg. Pay offered"/>
+    <input type="number" :step=10 :min=0 v-model="avgPay" placeholder="Avg. Pay offered"/>
   </div>
 </template>
 
