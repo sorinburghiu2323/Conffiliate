@@ -3,13 +3,16 @@
   <h2>Let's get you connected at no cost.</h2>
   <div class="form-container">
     <div v-if="step === 1">
-      <Step1 @business="setBusiness" @nextStep="goNext"></Step1>
+      <Step1 @business="setBusiness" @influencer="setInfluencer" @nextStep="goNext"></Step1>
     </div>
     <div v-else-if="step === 2">
       <Step2 :business="business"></Step2>
     </div>
     <div v-else-if="step === 3">
       <Step3></Step3>
+    </div>
+    <div v-else-if="step === 4">
+      <Step4 :business="business"></Step4>
     </div>
     <div class="bottom-nav">
       <button name="back" @click.prevent="goBack">Back</button>
@@ -19,9 +22,10 @@
 </template>
 
 <script>
-import Step1 from '../components/RegisterSteps/Step1.vue'
-import Step2 from '../components/RegisterSteps/Step2.vue'
-import Step3 from "@/components/RegisterSteps/Step3";
+import Step1 from "../components/RegisterSteps/Step1.vue";
+import Step2 from "../components/RegisterSteps/Step2.vue";
+import Step3 from "../components/RegisterSteps/Step3.vue";
+import Step4 from "../components/RegisterSteps/Step4.vue";
 export default {
 name: "Register",
   data(){
@@ -34,6 +38,7 @@ name: "Register",
     Step1,
     Step2,
     Step3,
+    Step4,
   },
   methods: {
     goNext(){
@@ -48,6 +53,9 @@ name: "Register",
     },
     setBusiness(){
       this.business = true;
+    },
+    setInfluencer(){
+      this.business = false;
     }
   }
 }

@@ -1,7 +1,14 @@
 <template>
+
   <h2>
-    About you...
+    About yourself...
   </h2>
+  <div v-if="!business">
+      Currently selected Influencer
+  </div>
+  <div v-else-if="business">
+      Currently selected Business
+  </div>
   <input type="text" v-model="name" placeholder="Name"/>
   <input type="text" v-model="email" placeholder="Email"/>
   <div v-if="!business">
