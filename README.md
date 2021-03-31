@@ -1,21 +1,21 @@
 # Conffiliate
 
-## About
+## 📖 About
 
 Conffiliate is an affiliate marketing platform where we aim to connect influencers and businesses together to 
 collaborate and grow together.
 
-## Workspaces
+## 🤝 Workspaces
 
 **NOTE:** Send Sorin your trello account name and google email to add you to it.
 
-Trello board for tasks: https://trello.com/b/UhVmO3EG/conffiliate
+[Trello board for tasks](https://trello.com/b/UhVmO3EG/conffiliate)
 
-Google drive: https://drive.google.com/drive/u/0/folders/1lA9QxlAJ3Zp1EZhXGPswerR02fl9SWU5
+[Shared Google drive](https://drive.google.com/drive/u/0/folders/1lA9QxlAJ3Zp1EZhXGPswerR02fl9SWU5)
 
-Discord server: https://discord.gg/Z5tsExZhH5
+[Discord server](https://discord.gg/Z5tsExZhH5)
 
-## Setup
+## 🛠️ Setup
 
 First set up you python virtual environment and activate it.
 
@@ -61,7 +61,7 @@ Compiles and minifies for production
 npm run build
 ```
 
-## Having a migration error?
+### Having a migration error?
 
 This may be due to a database update. Simply drop you current database and create a new one as follows:
 1. Delete `db.sqlite3` file
