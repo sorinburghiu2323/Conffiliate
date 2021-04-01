@@ -1,0 +1,169 @@
+openapi: 3.0.0
+info:
+  title: Conffiliate_API
+  version: '1.0'
+  description: Conffiliate restful API.
+  license:
+    name: MIT
+    url: 'https://github.com/sorinburghiu2323/Conffiliate/blob/master/LICENSE.md'
+  contact:
+    name: Sorin Burghiu
+    email: sorin.burghiu23@gmail.com
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /users:
+    post:
+      summary: Create new user
+      operationId: post-users
+      responses:
+        '201':
+          description: Created - User created.
+        '400':
+          description: 'Bad Request - {description of why request is bad}'
+      description: |-
+        Create a new user.
+        Also use for pre-registering.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                last_name:
+                  type: string
+                email:
+                  type: string
+                user_type:
+                  type: string
+                  description: '"influencer" or "business"'
+                phone:
+                  type: string
+                description:
+                  type: string
+                avg_pay:
+                  type: number
+                  description: Average pay influencers are looking for or businesses are looking to pay.
+                known_as:
+                  type: string
+                  description: Only for influencers.
+                audience_num:
+                  type: integer
+                  description: Only for influencers.
+                avg_views:
+                  type: integer
+                  description: Only for influencers.
+                business_name:
+                  type: string
+                  description: Only for businesses.
+                business_link:
+                  type: string
+                  description: Only for businesses.
+                platforms:
+                  type: array
+                  description: |-
+                    Access the platforms get endpoint to see existing platforms.
+                    New platforms will be created.
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      platform:
+                        type: string
+                keyword:
+                  type: array
+                  description: |-
+                    Access the keywords endpoint to get already existing keywords.
+                    New keywords will be created.
+                    A user has a limit to how many keywords they can have.
+                  items:
+                    type: string
+                profile_picture:
+                  type: string
+                  description: Needs to be parsed as file.
+              required:
+                - first_name
+                - last_name
+                - email
+                - user_type
+  /keywords:
+    get:
+      summary: Get keywords
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                  previous:
+                    type: string
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Keyword'
+      operationId: get-keywords
+      description: Get list of keywords.
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: phrase
+          description: Filter keywords by phrase.
+  /platforms:
+    get:
+      summary: Get platforms
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                  previous:
+                    type: string
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Platform'
+      operationId: get-platforms
+      description: Get list of platforms.
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: phrase
+          description: Filter by phrase.
+components:
+  schemas:
+    Keyword:
+      title: Keyword
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+    Platform:
+      title: Platform
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string

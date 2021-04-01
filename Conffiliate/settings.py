@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'affiliate_mvp',
     'backend',
     'frontend',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -132,9 +133,22 @@ STATICFILES_DIRS = [
 ]
 
 # Override the default user model.
-AUTH_USER_MODEL = "affiliate_mvp.User"
+AUTH_USER_MODEL = "backend.User"
 
 # Media files
-# (http://www.learningaboutelectronics.com/Articles/How-to-create-an-image-uploader-with-Python-in-Django.php)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = "/media/"
+
+
+# Django Rest Framework.
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10,
+}

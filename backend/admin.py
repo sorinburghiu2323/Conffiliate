@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from backend.models import *
+
+models = [User, Platform, UserPlatform, Keyword, UserKeyword]
+
+for model in models:
+    admin.site.register(model)
