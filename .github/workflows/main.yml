@@ -31,5 +31,5 @@ jobs:
       - name: Test backend with Django
         run: python manage.py test
 
-      - name: Black Code Formatter
-        uses: lgeiger/black-action@v1.0.1
+      - name: Check black code formatter
+        run: black --check .
