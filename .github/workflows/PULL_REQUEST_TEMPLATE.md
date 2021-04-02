@@ -1,4 +1,4 @@
-# Pull Request - {{ Title }}
+# Pull Request - {{ Task/Bug: Title }}
 
 ## Description
 {{ Description of what this pull request adds to the repository }}
