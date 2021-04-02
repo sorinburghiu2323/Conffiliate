@@ -17,16 +17,20 @@ collaborate and grow together.
 
 ## 🛠️ Setup
 
-First set up you python virtual environment and activate it.
+First set up your python virtual environment.
 
-```bash
-$ python -m venv .venv
-
-$ .venv\Scripts\activate.bat      # Windows
-$ .venv\bin\activate              # Linux
+```
+python -m venv .venv
 ```
 
-Then install python dependencies:
+Then activate it with:
+
+```
+.venv\Scripts\activate.bat      # Windows
+.venv\bin\activate              # Linux
+```
+
+Install python dependencies:
 ```
 pip install -r requirements.txt
 ```
@@ -51,9 +55,10 @@ npm install
 
 Now to build the frontend, there are two ways:
 
-Watches for any changes in the filetree and recompiles when detects a change
+Watches for any changes in the filetree and recompiles when detects a change:
 ```
 npm run watch
+npm run serve
 ```
 
 Compiles and minifies for production
