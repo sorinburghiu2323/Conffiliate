@@ -62,7 +62,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         null=True, blank=True
     )  # Looking for pay / Willing to pay.
     country = models.CharField(max_length=255, null=True, blank=True)
-    gender = models.CharField(max_length=1,
+    gender = models.CharField(
+        max_length=1,
         choices=[("M", "Male"), ("F", "Female"), ("O", "Other")],
         null=True,
         blank=True,
