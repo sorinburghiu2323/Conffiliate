@@ -1,5 +1,3 @@
-from abc import ABC
-
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 
@@ -16,7 +14,9 @@ class UserPlatformPostSerializer(serializers.Serializer):
 
 class UserPostSerializer(serializers.ModelSerializer):
     platforms = UserPlatformPostSerializer(many=True, required=False)
-    keywords = serializers.ListField(child=serializers.CharField(max_length=63), required=False)
+    keywords = serializers.ListField(
+        child=serializers.CharField(max_length=63), required=False
+    )
 
     class Meta:
         model = User
@@ -66,7 +66,11 @@ class UserPostSerializer(serializers.ModelSerializer):
         # Check if keywords are too many.
         if "keywords" in validated_data:
             if len(validated_data["keywords"]) > MAX_USER_KEYWORDS:
-                raise ValidationError("A user cannot have more than " + str(MAX_USER_KEYWORDS) + " keywords.")
+                raise ValidationError(
+                    "A user cannot have more than "
+                    + str(MAX_USER_KEYWORDS)
+                    + " keywords."
+                )
 
         new_user = User.objects.create_user(
             first_name=validated_data["first_name"],
@@ -135,7 +139,6 @@ class UserPostSerializer(serializers.ModelSerializer):
 
 
 class KeywordGetSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Keyword
         read_only_fields = ["id"]
@@ -143,7 +146,6 @@ class KeywordGetSerializer(serializers.ModelSerializer):
 
 
 class PlatformGetSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Platform
         read_only_fields = ["id"]
