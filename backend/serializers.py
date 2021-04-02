@@ -132,3 +132,19 @@ class UserPostSerializer(serializers.ModelSerializer):
 
         new_user.save()
         return new_user
+
+
+class KeywordGetSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Keyword
+        read_only_fields = ["id"]
+        fields = ["id", "name"]
+
+
+class PlatformGetSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Platform
+        read_only_fields = ["id"]
+        fields = ["id", "name"]
