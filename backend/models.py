@@ -9,7 +9,8 @@ class UserType(models.TextChoices):
     BUSINESS = "business"
 
     @staticmethod
-    def max_length() -> int: return 10
+    def max_length() -> int:
+        return 10
 
 
 class CustomUserManager(BaseUserManager):
@@ -51,16 +52,21 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
-    user_type = models.CharField(choices=UserType.choices, max_length=UserType.max_length())
+    user_type = models.CharField(
+        choices=UserType.choices, max_length=UserType.max_length()
+    )
     phone = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     profile_picture = models.FileField(null=True, blank=True)
-    avg_pay = models.FloatField(null=True, blank=True)  # Looking for pay / Willing to pay.
+    avg_pay = models.FloatField(
+        null=True, blank=True
+    )  # Looking for pay / Willing to pay.
     country = models.CharField(max_length=255, null=True, blank=True)
     gender = models.CharField(
         max_length=1,
-        choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')],
-        null=True, blank=True,
+        choices=[("M", "Male"), ("F", "Female"), ("O", "Other")],
+        null=True,
+        blank=True,
     )
     date_of_birth = models.DateField(null=True, blank=True)
 

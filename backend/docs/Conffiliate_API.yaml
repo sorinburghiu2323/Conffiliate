@@ -12,7 +12,7 @@ info:
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /users:
+  /users/:
     post:
       summary: Create new user
       operationId: post-users
@@ -89,7 +89,8 @@ paths:
                 - last_name
                 - email
                 - user_type
-  /keywords:
+    parameters: []
+  /keywords/:
     get:
       summary: Get keywords
       tags: []
@@ -119,7 +120,8 @@ paths:
           in: query
           name: phrase
           description: Filter keywords by phrase.
-  /platforms:
+    parameters: []
+  /platforms/:
     get:
       summary: Get platforms
       tags: []
@@ -149,6 +151,7 @@ paths:
           in: query
           name: phrase
           description: Filter by phrase.
+    parameters: []
 components:
   schemas:
     Keyword:
