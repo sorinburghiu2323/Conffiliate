@@ -3,16 +3,16 @@
   <h2>Let's get you connected at no cost.</h2>
   <div class="form-container">
     <div v-if="step === 1">
-      <Step1 @business="setBusiness" @influencer="setInfluencer" @nextStep="goNext"></Step1>
+      <Step1 @is_business="setBusiness" @influencer="setInfluencer" @nextStep="goNext"></Step1>
     </div>
     <div v-else-if="step === 2">
-      <Step2 :business="business"></Step2>
+      <Step2 :is_business="is_business"></Step2>
     </div>
     <div v-else-if="step === 3">
       <Step3></Step3>
     </div>
     <div v-else-if="step === 4">
-      <Step4 :business="business"></Step4>
+      <Step4 :is_business="is_business"></Step4>
     </div>
     <div class="bottom-nav">
       <button name="back" @click.prevent="goBack">Back</button>
@@ -31,7 +31,7 @@ name: "Register",
   data(){
     return {
       step: 1,
-      business: false,
+      is_business: false,
     }
   },
   components: {
@@ -52,10 +52,11 @@ name: "Register",
       }
     },
     setBusiness(){
-      this.business = true;
+      console.log("thi");
+      this.is_business = true;
     },
     setInfluencer(){
-      this.business = false;
+      this.is_business = false;
     }
   }
 }

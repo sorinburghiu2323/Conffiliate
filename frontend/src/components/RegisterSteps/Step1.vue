@@ -1,7 +1,7 @@
 <template>
   <h2>I am a...</h2>
   <div class="select">
-    <div class="business" @click.prevent="route('business')"><h2>Business</h2></div>
+    <div class="business" @click.prevent="route('is_business')"><h2>Business</h2></div>
     <div class="influencer" @click.prevent="route('influencer')"><h2>Influencer</h2></div>
   </div>
 </template>
@@ -10,12 +10,11 @@
 export default {
   name: "Step1",
   emits: {
-    business: null,
+    is_business: null,
     nextStep: null,
   },
   methods: {
     route(type){
-      console.log(type)
       this.$emit(type);
       this.$emit("nextStep");
     }

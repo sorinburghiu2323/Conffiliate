@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!business">
+  <div v-if="!is_business">
     <h2>
       Your Fanbase...
     </h2>
@@ -16,7 +16,7 @@
       <input type="url" v-model="platLink" placeholder="Link"/>
     </div>
   </div>
-  <div v-else-if="business">
+  <div v-else-if="is_business">
     <h2>
        Your Business...
     </h2>
@@ -41,11 +41,10 @@ export default {
     };
   },
   props: {
-    business: Boolean,
+    is_business: Boolean,
   },
 };
 </script>
 
 <style scoped>
-
 </style>

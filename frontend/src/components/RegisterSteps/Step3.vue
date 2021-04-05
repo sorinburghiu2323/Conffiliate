@@ -16,13 +16,12 @@ export default {
     }
   },
   props: {
-    business: Boolean,
+    is_business: Boolean,
   }
 }
 </script>
 
 <style scoped>
 .textarea {
-
 }
 </style>
