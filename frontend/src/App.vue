@@ -1,9 +1,12 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">Home</router-link>
+    |
     <router-link to="/about">About</router-link>
+    |
+    <router-link to="/register">Register</router-link>
   </div>
-  <router-view />
+  <router-view/>
 </template>
 
 <style lang="scss">
@@ -12,7 +15,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #316870;
 }
 
 #nav {
