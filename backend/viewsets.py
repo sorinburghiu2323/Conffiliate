@@ -21,7 +21,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         super().create(request, *args, **kwargs)
-        return Response("User created.")
+        return Response("User created.", status=201)
 
 
 class KeywordViewSet(viewsets.ModelViewSet):
