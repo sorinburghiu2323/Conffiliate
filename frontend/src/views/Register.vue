@@ -52,7 +52,6 @@ name: "Register",
       }
     },
     setBusiness(){
-      console.log("thi");
       this.is_business = true;
     },
     setInfluencer(){
