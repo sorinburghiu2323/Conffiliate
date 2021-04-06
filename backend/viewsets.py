@@ -30,7 +30,16 @@ class KeywordViewSet(viewsets.ModelViewSet):
     Route: /keywords
     """
 
-    queryset = Keyword.objects.all()
+    def get_queryset(self):
+        queryset = Keyword.objects.all()
+
+        # Filter by phrase.
+        phrase = self.request.GET.get("phrase")
+        if phrase is not None:
+            for term in phrase.split():
+                queryset = queryset.filter(name__icontains=term)
+
+        return queryset
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -43,7 +52,16 @@ class PlatformViewSet(viewsets.ModelViewSet):
     Route: /platforms
     """
 
-    queryset = Platform.objects.all()
+    def get_queryset(self):
+        queryset = Platform.objects.all()
+
+        # Filter by phrase.
+        phrase = self.request.GET.get("phrase")
+        if phrase is not None:
+            for term in phrase.split():
+                queryset = queryset.filter(name__icontains=term)
+
+        return queryset
 
     def get_serializer_class(self):
         if self.action == "list":
