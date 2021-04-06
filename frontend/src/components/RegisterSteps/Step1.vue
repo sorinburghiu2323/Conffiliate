@@ -1,8 +1,12 @@
 <template>
   <h2>I am a...</h2>
   <div class="select">
-    <div class="business" @click.prevent="route('is_business')"><h2>Business</h2></div>
-    <div class="influencer" @click.prevent="route('influencer')"><h2>Influencer</h2></div>
+    <div class="business" @click.prevent="route('is_business')">
+      <h2>Business</h2>
+    </div>
+    <div class="influencer" @click.prevent="route('influencer')">
+      <h2>Influencer</h2>
+    </div>
   </div>
 </template>
 
@@ -14,12 +18,12 @@ export default {
     nextStep: null,
   },
   methods: {
-    route(type){
+    route(type) {
       this.$emit(type);
       this.$emit("nextStep");
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -29,7 +33,7 @@ export default {
   display: flex;
 }
 .business {
-  margin-left:auto;
+  margin-left: auto;
   border-radius: 10px 0 0 10px;
   cursor: pointer;
   padding-left: 4px;

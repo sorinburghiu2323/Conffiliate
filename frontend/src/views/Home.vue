@@ -1,8 +1,6 @@
 <template>
   adasd
-  <div class="home">
-    Hi
-  </div>
+  <div class="home">Hi</div>
 </template>
 
 <script>
