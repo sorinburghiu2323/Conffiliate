@@ -2,6 +2,9 @@
   <h1>Register</h1>
   <h2>Let's get you connected at no cost.</h2>
   <div class="form-container">
+    <div class="progress-bar">
+
+    </div>
     <div v-if="step === 1">
       <Step1 @is_business="setBusiness" @influencer="setInfluencer" @nextStep="goNext"></Step1>
     </div>
@@ -62,6 +65,7 @@ name: "Register",
 </script>
 
 <style scoped>
+@import '../assets/css/progress-bar.css';
 .form-container {
   padding-top: 4px;
   width: max(500px, 40%);

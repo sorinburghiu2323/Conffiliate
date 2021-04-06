@@ -16,12 +16,17 @@ const routes = [
   {
     path: "/register",
     component: Register,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: Register,
   }
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
   routes,
+  history: createWebHistory(),
 });
 
 export default router;
