@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Register from "@/views/Register";
 import About from "@/views/About";
@@ -16,12 +16,17 @@ const routes = [
   {
     path: "/register",
     component: Register,
-  }
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: Register,
+  },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
   routes,
+  history: createWebHistory(),
 });
 
 export default router;

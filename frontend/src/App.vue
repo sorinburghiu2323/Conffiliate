@@ -6,7 +6,7 @@
     |
     <router-link to="/register">Register</router-link>
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <style lang="scss">
