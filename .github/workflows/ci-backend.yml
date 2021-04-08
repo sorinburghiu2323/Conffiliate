@@ -1,0 +1,35 @@
+name: CI-Backend
+
+on:
+  push:
+    branches: [ master, deployment ]
+  pull_request:
+    branches: [ master, deployment ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  test:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+          
+      - name: Install pip dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Check for missing migrations
+        run: python manage.py makemigrations --check --dry-run
+          
+      - name: Run migrations with Django
+        run: python manage.py migrate
+          
+      - name: Test backend with Django
+        run: python manage.py test
+
+      - name: Check black code formatter
+        run: black --check .

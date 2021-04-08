@@ -1,32 +1,39 @@
 # Conffiliate
 
-## About
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![License: MIT](https://black.readthedocs.io/en/stable/_static/license.svg)](https://github.com/sorinburghiu2323/Conffiliate/blob/master/LICENSE.md)
+
+## 📖 About
 
 Conffiliate is an affiliate marketing platform where we aim to connect influencers and businesses together to 
 collaborate and grow together.
 
-## Workspaces
+## 🤝 Workspaces
 
 **NOTE:** Send Sorin your trello account name and google email to add you to it.
 
-Trello board for tasks: https://trello.com/b/UhVmO3EG/conffiliate
+[Trello board for tasks](https://trello.com/b/UhVmO3EG/conffiliate)
 
-Google drive: https://drive.google.com/drive/u/0/folders/1lA9QxlAJ3Zp1EZhXGPswerR02fl9SWU5
+[Shared Google drive](https://drive.google.com/drive/u/0/folders/1lA9QxlAJ3Zp1EZhXGPswerR02fl9SWU5)
 
-Discord server: https://discord.gg/Z5tsExZhH5
+[Discord server](https://discord.gg/Z5tsExZhH5)
 
-## Setup
+## 🛠️ Setup
 
-First set up you python virtual environment and activate it.
+First set up your python virtual environment.
 
-```bash
-$ python -m venv .venv
-
-$ .venv\Scripts\activate.bat      # Windows
-$ .venv\bin\activate              # Linux
+```
+python -m venv .venv
 ```
 
-Then install python dependencies:
+Then activate it with:
+
+```
+.venv\Scripts\activate.bat      # Windows
+.venv\bin\activate              # Linux
+```
+
+Install python dependencies:
 ```
 pip install -r requirements.txt
 ```
@@ -51,9 +58,10 @@ npm install
 
 Now to build the frontend, there are two ways:
 
-Watches for any changes in the filetree and recompiles when detects a change
+Watches for any changes in the filetree and recompiles when detects a change:
 ```
 npm run watch
+npm run serve
 ```
 
 Compiles and minifies for production
@@ -61,7 +69,7 @@ Compiles and minifies for production
 npm run build
 ```
 
-## Having a migration error?
+### Having a migration error?
 
 This may be due to a database update. Simply drop you current database and create a new one as follows:
 1. Delete `db.sqlite3` file
