@@ -54,7 +54,8 @@ python manage.py runserver
 cd frontend
 npm install
 ```
-**NOTE:** When you pull changes that others have made, you may want to do `npm install` again to ensure any additional dependencies have been added.
+**NOTE:** When you pull changes that others have made, you may want to do 
+`npm install` again to ensure any additional dependencies have been added.
 
 Now to build the frontend, there are two ways:
 
@@ -64,10 +65,18 @@ npm run watch
 npm run serve
 ```
 
-Compiles and minifies for production
+Compiles and minifies for production:
 ```
 npm run build
 ```
+
+### Need some test data?
+
+Run the bootstrap to autogenerate some dummy data using:
+```
+python manage.py bootstrap
+```
+**NOTE:** Do this after migrating for the first time.
 
 ### Having a migration error?
 
